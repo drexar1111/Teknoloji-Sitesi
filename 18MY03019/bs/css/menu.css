@@ -1,0 +1,45 @@
+#menu ul
+{
+	list-style-type: none;
+}
+#menu a
+{
+	display: block;
+	width: 149px;
+	height: 75px;
+	background-color: #333;
+	color: white;
+	text-decoration: none;
+	line-height: 75px;
+	text-align: center;
+	font-size: 22px;
+}
+#menu a:hover
+{
+	background-color: white;
+
+	color: #333;
+}
+#menu li
+{
+	float: left;
+	position: relative;
+}
+#menu::after
+{
+	clear: both;
+	display: block;
+	content: "";
+}
+#menu li ul
+{
+	position: absolute;
+	display: none;
+	top: 75px;
+	left: 0px;
+	color: #333;
+}
+#menu li:hover > ul
+{
+	display: block;
+}

@@ -1,0 +1,112 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="admintaslak.master.cs" Inherits="metehanaksoy.admintaslak" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="bs/menu/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="bs/css/stil.css">
+	<script type="text/javascript" src="bs//js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="bs/js/bootstrap.min.js"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+     <div class="fluid-container"> 
+	<div class="row" style="border-bottom: 1px solid #ccc;">
+		<div class="col-md-6" >
+			<a href="admin.aspx"><img src="bs/css/rsm/adminlogo.png" class="img-responsive" style="padding: 5px;"></a>
+			
+		</div>
+		<div class="col-md-6" style="padding-top: 10px;">
+
+				<div style="float: right;padding-right: 5px;" >
+			<ul style="right: 0px;">
+				<li class="dropdown" style="list-style-type: none;" style="padding-right: 100px;">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#" ><img src="bs/css/rsm/cog.png" class="img-responsive" width="35" height="35"  >
+        </a>
+        <ul class="dropdown-menu" style="right:0;">
+          <li><a href="default.aspx" >Siteyi Gör</a></li>
+          <li><a href="admingiris.aspx"><span class="glyphicon glyphicon-off"></span>Çıkış</a></li>
+          
+        </ul>
+      </li>	
+      </ul>
+      </div>
+		</div>
+	</div>
+    <div class="row" style="height:100% !important">
+	<div class="col-md-2" style="background-color: #333;padding-top: 10px ;height:100% !important;position:absolute;">
+		<div class="col-md-4">
+			<img src="bs/css/rsm/admin.png" class="img-circle" class="img-responsive" width="60" height="60" style="padding: 5px;">  
+		</div>
+		<div class="col-md-8" style="padding-left:15px; padding-top:5px;">
+			<div>
+			<p id="p1" class="text-center" style="color:white;font-size:17px;"><b></b></p>
+		</div>
+		<div>
+            <p class="text-center" style="color:white;font-size:15px;">Administrator</p>
+            
+		</div>
+		<div>
+            <p style="color:#ccc;font-size:12px;"> Durum <span class="glyphicon glyphicon-record"></span> Online</p>
+		</div>
+		</div>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+	<nav class="navbar" style="font-size:15px;">  
+    <ul class="nav">
+      
+      <li><a href="uyeyon.aspx"><span class="glyphicon glyphicon-user"></span> Üye Yönetimi</a></li>
+      <li><a href="menuyon.aspx"><span class="glyphicon glyphicon-th-list"></span> Menü Yönetimi</a></li>
+     
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-edit"></span> Referans Yönetimi
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="refekle.aspx">Referans Ekle</a></li>
+          <li><a href="reftum.aspx">Tümünü Görüntüle</a></li>
+          
+        </ul>
+      </li>
+       <li><a href="iletyon.aspx"><span class="glyphicon glyphicon-envelope"></span> İletişim Mesajları</a></li>
+    </ul>
+	</nav>
+
+	</div>
+    <div class="col-md-10"  style="padding:25px;float:right;">
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    <br>
+		<br>
+		<br>
+    
+		</div>
+    <script>
+				var zaman = new Date();
+				var saat = zaman.getHours();
+
+				if (saat>=6 && saat<12) {
+					document.getElementById("p1").innerHTML = "<b>İyi Sabahlar</b>";
+				}
+				else if (saat>=12 && saat<17) {
+					document.getElementById("p1").innerHTML = "<b>İyi Öğlenler</b>";
+				}
+				else if (saat>=17 && saat<23) {
+					document.getElementById("p1").innerHTML = "<b>İyi Akşamlar</b>";
+				}
+				else if (saat<6) {
+					document.getElementById("p1").innerHTML = "<b>İyi Geceler</b>";
+				}
+		</script>
+    </div>
+</body>
+</html>

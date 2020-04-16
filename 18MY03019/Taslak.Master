@@ -1,0 +1,94 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Taslak.master.cs" Inherits="metehanaksoy.Taslak" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>MeTech</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="bs/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="bs/css/stil.css">
+	<script type="text/javascript" src="bs/js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="bs/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+    $(function() {
+        $("#top").click(function() {
+            $("html,body").stop().animate({ scrollTop: "0" }, 1000);
+        });
+    });
+    $(window).scroll(function() {
+        var uzunluk = $(document).scrollTop();
+        if (uzunluk > 300) $("#top").fadeIn(500);
+        else { $("#top").fadeOut(500); }
+    });
+</script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <div class="fluid-container">
+		<div class="ust">
+			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+				
+			</div>
+			<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+				<div class="topmenu">
+					<a href="giris.aspx" style="color:white;"><button class="btn btn-primary" style="margin-right: 15px;border-right: 1px solid #888;"> Giriş Yapın</button></a>
+					<a href="kayitol.aspx" style="color:white;"><button class="btn btn-success"  style="border-right: 1px solid #888;padding-right: 5px;">Üye Olun</button></a>
+				</div>
+				<div class="callus">
+					<span class="glyphicon glyphicon-envelope">metech@gmail.com</span></a>
+					<span class="glyphicon glyphicon-earphone" >90000000000</span>
+				</div>
+			</div>
+		</div>
+        <nav class="navbar navbar-inverse" style="border-radius:0px;">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand navbar-left" href="default.aspx"><img src="bs/css/rsm/adminlogo.png" style="margin-top: -15px;"></a>
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="default.aspx">Anasayfa</a></li>
+      <li><a href="kurumsal.aspx">Kurumsal</a></li>     
+      <li class="dropdown">
+       
+        <span class="caret"></span></a>
+        
+      </li>
+      <li><a href="referans.aspx">Referans</a></li>
+      
+      <li><a href="iletisim.aspx">İletişim</a></li>
+    </ul>
+  </div>
+</nav> 
+</nav> 
+    
+
+    <div class="flued-container">
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+        <div class="flued-container">
+        <asp:ContentPlaceHolder ID="fother" runat="server" >
+           
+        </asp:ContentPlaceHolder>
+        </div>
+        <div class="alt" >
+			
+
+                <nav class="navbar navbar-inverse">
+                    <p style="color: white;line-height:50px;font-size:16px;padding-top: 10px;" class="col-md-6">
+				Copyright © 2019 - Ayhan Metehan Aksoy
+			</p>
+                
+            </nav>
+            
+		</div>
+        
+        
+        </div>
+       
+</body>
+</html>
